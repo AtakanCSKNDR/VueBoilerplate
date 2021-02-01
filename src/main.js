@@ -5,9 +5,10 @@ import store from "./store";
 import i18n from "@/locales/index";
 import vuetify from "./plugins/vuetify";
 import ApiService from "./common/api.service";
+import { FontawesomeServe } from "./fontawesome/font.awesome";
 
 ApiService.init();
-
+FontawesomeServe(Vue);
 Vue.config.productionTip = false;
 
 new Vue({

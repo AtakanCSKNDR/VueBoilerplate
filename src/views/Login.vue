@@ -18,10 +18,19 @@
                     src="@/assets/logo.png"
                   ></v-img>
                   <div class="mt-6 mb-6">Login with</div>
-                  <v-btn v-for="(item,index) in loginWith" :key="index" class="mx-2" fab dark :color="item.color">
-                    <v-icon dark> </v-icon>
+                  <v-btn
+                    v-for="(item, index) in loginWith"
+                    :key="index"
+                    class="mx-2"
+                    fab
+                    dark
+                    medium
+                    :color="item.color"
+                    style="font-size:24px"
+                  >
+                    <faIcon :icon="['fab', item.icon]" />
                   </v-btn>
-                
+
                   <v-divider class="mb-6 mt-6"></v-divider>
                   <v-text-field
                     label="Email or Username"
@@ -41,11 +50,15 @@
                   <v-row class="justify-space-between">
                     <v-checkbox
                       style="margin-top:0px"
-                      v-model="allowSpaces"
                       label="Remember Me"
                     ></v-checkbox>
                     <div>Forgot Password?</div>
-                    <v-btn @click="$router.push('/View')" color="#5a69aa" rounded block>
+                    <v-btn
+                      @click="$router.push('/View')"
+                      color="#5a69aa"
+                      rounded
+                      block
+                    >
                       Login
                     </v-btn>
 
@@ -75,9 +88,9 @@ export default {
   data() {
     return {
       loginWith: [
-        { type: "facebook", color: "indigo" },
-        { type: "facebook", color: "grey" },
-        { type: "facebook", color: "indigo" },
+        { type: "facebook", color: "#4867aa", icon: "facebook" },
+        { type: "facebook", color: "#161b22", icon: "github" },
+        { type: "facebook", color: "#0a66c2", icon: "linkedin" },
       ],
     };
   },

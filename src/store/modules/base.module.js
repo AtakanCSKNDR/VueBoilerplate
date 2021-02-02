@@ -19,7 +19,7 @@ const actions = {
   [BASE_GET_METHOD](context) {
     return new Promise((resolve, reject) => {
       apiService
-        .get("/posts")
+        .get("/users")
         .then((response) => {
           context.commit(BASE_SET_METHOD, response);
           resolve(response);
@@ -33,7 +33,7 @@ const actions = {
   [BASE_POST_METHOD](context, payload) {
     return new Promise((resolve, reject) => {
       apiService
-        .post("/posts", payload)
+        .post("/users", payload)
         .then((payload) => {
           resolve(payload);
         })
@@ -58,14 +58,13 @@ const actions = {
 
   [BASE_DELETE_METHOD](context, payload) {
     return new Promise((resolve, reject) => {
-      apiService
-        .delete(`/posts/${payload.id}`, payload)
-        .then((payload) => {
-          resolve(payload);
-        })
-        .catch((err) => {
-          reject(err);
-        });
+      apiService.delete(`/users/${payload}`)
+      .then((payload) => {
+        console.log(payload);
+        resolve(payload);
+      }).catch((err) => {
+        reject(err);
+      });
     });
   },
 };

@@ -54,7 +54,7 @@
                     ></v-checkbox>
                     <div>Forgot Password?</div>
                     <v-btn
-                      @click="$router.push('/View')"
+                      @click="$router.push('/Dashboard')"
                       color="#5a69aa"
                       rounded
                       block

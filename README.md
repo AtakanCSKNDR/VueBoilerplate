@@ -44,7 +44,7 @@ Vue-Boilerplate uses a number of open source projects to work properly:
 * [Axios](https://github.com/imcvampire/vue-axios) - For HTTP requests (GET-POST-PUT-DELETE).
 * [Vuex](https://vuex.vuejs.org/) - Vuex is a state management pattern + library for Vue.js applications.
 * [i18n](https://kazupon.github.io/vue-i18n/) - Vue I18n is internationalization plugin for Vue.js
-* [FontAwesome]((https://github.com/FortAwesome/vue-fontawesome) - To get vector icons and social logos
+* [FontAwesome](https://github.com/FortAwesome/vue-fontawesome) - To get vector icons and social logos
 * [node.js](https://nodejs.org/en/) - evented I/O for the backend
 
 And of course [Vue-Boilerplate](https://github.com/AtakanCSKNDR/Vue-Boilerplate/) itself is open source with a public repository

@@ -4,10 +4,8 @@
       <v-row>
         <v-col :cols="12">
           <v-card-title style="padding:0;" class="mb-6 justify-space-between">
-            New User
-           <!--  <v-btn color="error" class="mr-4" small @click="reset">
-              Reset Form
-            </v-btn> -->
+            {{$t('pages.base.addnew')}}
+         
           </v-card-title>
 
           <v-form ref="form" v-model="valid" lazy-validation>
@@ -15,7 +13,7 @@
               <v-col :md="6">
                 <v-text-field
                   v-model="form.name"
-                  label="Name"
+                  :label="$t('pages.base.name')"
                   solo
                   dense
                 ></v-text-field>
@@ -31,7 +29,7 @@
               <v-col :md="6"
                 ><v-text-field
                   v-model="form.username"
-                  label="Username"
+                  :label="$t('pages.base.username')"
                   solo
                   dense
                 ></v-text-field
@@ -39,7 +37,7 @@
               <v-col :md="6">
                 <v-text-field
                   v-model="form.phone"
-                  label="Phone"
+                  :label="$t('pages.base.phone')"
                   solo
                   dense
                 ></v-text-field>
@@ -47,7 +45,7 @@
               <v-col :md="6">
                 <v-text-field
                   v-model="form.website"
-                  label="Website"
+                  :label="$t('pages.base.website')"
                   solo
                   dense
                 ></v-text-field>
@@ -59,7 +57,7 @@
             </v-row>
 
             <v-btn color="success" class="mr-4" small @click="createUser">
-              Add User
+              {{$t('pages.base.adduser')}}
             </v-btn>
           </v-form>
         </v-col>
@@ -72,7 +70,7 @@
       v-model="alert"
       dismissible
     >
-      Kullanıcı Ekleme İşlemi Başarılı
+      {{$t('pages.base.notify.addsuccess')}}
     </v-alert>
   </div>
 </template>

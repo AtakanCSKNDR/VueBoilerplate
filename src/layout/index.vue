@@ -67,8 +67,8 @@ export default {
       breadCrumbRoute: [],
       drawer: null,
       items: [
-        { title: "Dashboard", icon: "mdi-view-dashboard", route: "/Dashboard" },
-        { title: "Users", icon: "mdi-image", route: "/Users" },
+        { title: this.$tc('pages.menus.dashboard'), icon: "mdi-view-dashboard", route: "/Dashboard" },
+        { title: this.$tc('pages.menus.users'), icon: "mdi-image", route: "/Users" },
       ],
       right: null,
     };

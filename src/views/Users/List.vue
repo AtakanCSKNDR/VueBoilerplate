@@ -3,9 +3,9 @@
     <v-container>
       <v-row>
         <v-col :cols="12" class="text-right">
-          <v-btn color="success" small @click="$router.push('/Users/New')"
-            >Add New</v-btn
-          >
+          <v-btn color="success" small @click="$router.push('/Users/New')">{{
+            $t("pages.base.addnew")
+          }}</v-btn>
         </v-col>
         <v-col :cols="12">
           <v-simple-table fixed-header max-height="800px">
@@ -13,16 +13,16 @@
               <thead>
                 <tr>
                   <th class="text-left">
-                    Name
+                    {{ $t('pages.base.name') }}
                   </th>
                   <th class="text-left">
-                    Surname
+                    {{ $t('pages.base.surname') }}
                   </th>
                   <th class="text-left">
                     Email
                   </th>
                   <th class="text-right">
-                    Options
+                    {{ $t('pages.base.options') }}
                   </th>
                 </tr>
               </thead>

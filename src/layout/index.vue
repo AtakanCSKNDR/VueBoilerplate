@@ -77,7 +77,6 @@ export default {
   watch: {
     $route() {
       this.breadCrumbRoute = this.$route.matched;
-      console.log(this.breadCrumbRoute);
     },
   },
   methods: {

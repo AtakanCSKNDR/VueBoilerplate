@@ -5,7 +5,13 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faEdit, faTrash, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEdit,
+  faTrash,
+  faGlobe,
+  faUser,
+  faStickyNote,
+} from "@fortawesome/free-solid-svg-icons";
 export function FontawesomeServe(Vue) {
   Vue.component("faIcon", FontAwesomeIcon);
   library.add(faTrash);
@@ -14,4 +20,6 @@ export function FontawesomeServe(Vue) {
   library.add(faGithub);
   library.add(faLinkedin);
   library.add(faGlobe);
+  library.add(faUser);
+  library.add(faStickyNote);
 }

@@ -56,8 +56,8 @@
       </v-menu>
     </v-app-bar>
 
-    <v-main>
-      <div style="padding:15px">
+    <v-main style="background:#ededed">
+      <div style="padding:15px;">
         <v-card color="mb-2">
           <v-breadcrumbs :items="breadCrumbRoute">
             <template v-slot:item="{ item }">
@@ -67,9 +67,8 @@
             </template>
           </v-breadcrumbs>
         </v-card>
-        <v-card>
-          <router-view></router-view>
-        </v-card>
+
+        <router-view></router-view>
       </div>
     </v-main>
   </v-app>

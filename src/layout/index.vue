@@ -54,20 +54,60 @@
           </v-list-item>
         </v-list>
       </v-menu>
+
+      <v-menu
+        v-model="menu"
+        :close-on-content-click="false"
+        :nudge-width="200"
+        offset-x
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" v-on="on">
+            <faIcon style="font-size:30px" icon="cog"></faIcon>
+          </v-btn>
+        </template>
+
+        <v-card>
+          <v-list>
+            <v-list-item style="display:flex; justify-content:center">
+              <v-list-item-avatar size="150">
+                <img
+                  width="100%"
+                  src="https://image.freepik.com/free-vector/cute-cat-cactus-cartoon-icon-illustration_138676-2692.jpg"
+                  alt="Atakan"
+                />
+              </v-list-item-avatar>
+            </v-list-item>
+          </v-list>
+
+          <v-divider></v-divider>
+
+          <v-list>
+            <v-list-item>
+              <v-list-item-content style="text-align:center">
+                <v-list-item-title>Alice</v-list-item-title>
+                <v-list-item-subtitle
+                  >Creator of Vue-Boilerplate</v-list-item-subtitle
+                >
+              </v-list-item-content>
+            </v-list-item>
+          </v-list>
+
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn @click="$router.push('/')" block color="primary">
+              {{ $t("base.logout") }}
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-menu>
     </v-app-bar>
 
     <v-main style="background:#ededed">
       <div style="padding:15px;">
         <v-card color="mb-2">
-          <v-breadcrumbs :items="breadCrumbRoute">
-            <template v-slot:item="{ item }">
-              <v-breadcrumbs-item @click="$router.push(item.path)">
-                {{ item.name.toUpperCase() }}
-              </v-breadcrumbs-item>
-            </template>
-          </v-breadcrumbs>
+          <BreadCrumb :breadCrumbRoute="breadCrumbRoute"></BreadCrumb>
         </v-card>
-
         <router-view></router-view>
       </div>
     </v-main>
@@ -75,9 +115,18 @@
 </template>
 
 <script>
+import BreadCrumb from "@/components/BreadCrumb";
 export default {
+  components: {
+    BreadCrumb,
+  },
   data() {
     return {
+      fav: true,
+      menu: false,
+      message: false,
+      hints: true,
+
       breadCrumbRoute: [],
       drawer: null,
       items: [
@@ -111,7 +160,9 @@ export default {
       this.$router.push(route);
     },
   },
-  created() {},
+  created() {
+    this.breadCrumbRoute = this.$route.matched;
+  },
 };
 </script>
 

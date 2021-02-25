@@ -1,3 +1,4 @@
 export default {
-    base :'Temel',
-}
+  base: "Temel",
+  logout: "Çıkış",
+};

@@ -11,6 +11,7 @@ import {
   faGlobe,
   faUser,
   faStickyNote,
+  faCog
 } from "@fortawesome/free-solid-svg-icons";
 export function FontawesomeServe(Vue) {
   Vue.component("faIcon", FontAwesomeIcon);
@@ -22,4 +23,5 @@ export function FontawesomeServe(Vue) {
   library.add(faGlobe);
   library.add(faUser);
   library.add(faStickyNote);
+  library.add(faCog);
 }

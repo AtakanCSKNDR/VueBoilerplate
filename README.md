@@ -50,6 +50,16 @@ Vue-Boilerplate uses a number of open source projects to work properly:
 And of course [Vue-Boilerplate](https://github.com/AtakanCSKNDR/Vue-Boilerplate/) itself is open source with a public repository
 on GitHub.
 
+# ScreenShots
+
+Vue-Boilerplate comes with a simple user interface. You can check how boilerplate use.
+<p align="center">
+<img width="70%" src="https://user-images.githubusercontent.com/50195250/109169033-75c87700-7790-11eb-8709-3dc8830fa2f1.jpg">
+</p>
+<p align="center">
+<img width="70%" src="https://user-images.githubusercontent.com/50195250/109169163-942e7280-7790-11eb-8849-459b96ecf6f8.PNG">
+</p>
+
 # Documentation
 
 ### Architecture

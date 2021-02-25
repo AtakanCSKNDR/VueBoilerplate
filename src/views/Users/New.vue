@@ -21,6 +21,7 @@
                 <v-text-field
                   v-model="form.email"
                   label="E-mail"
+                  :rules="form.emailRules"
                   solo
                   dense
                 ></v-text-field>
@@ -67,35 +68,33 @@
 
 <script>
 import { BASE_POST_METHOD } from "@/store/actions.type";
+import user from "@/entity/user";
+
 export default {
   data() {
     return {
-      form: {
-        name: null,
-        email: null,
-        phone: null,
-        username: null,
-        website: null,
-      },
+      form: Object.assign({}, user),
     };
   },
   methods: {
     createUser() {
-      let request = {
-        name: this.form.name,
-        username: this.form.email,
-        email: this.form.email,
-        phone: this.form.phone,
-        website: this.form.website,
-      };
+      if (this.$refs.form.validate()) {
+        let request = {
+          name: this.form.name,
+          username: this.form.email,
+          email: this.form.email,
+          phone: this.form.phone,
+          website: this.form.website,
+        };
 
-      this.$store.dispatch(BASE_POST_METHOD, request).then(() => {
-        this.$notify({
-          title: "Added",
-          text: "User has been added successfully",
-          type: "success",
+        this.$store.dispatch(BASE_POST_METHOD, request).then(() => {
+          this.$notify({
+            title: "Added",
+            text: "User has been added successfully",
+            type: "success",
+          });
         });
-      });
+      }
     },
   },
   created() {},

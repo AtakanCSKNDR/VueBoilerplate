@@ -13,16 +13,16 @@
               <thead>
                 <tr>
                   <th class="text-left">
-                    {{ $t('pages.base.name') }}
+                    {{ $t("pages.base.name") }}
                   </th>
                   <th class="text-left">
-                    {{ $t('pages.base.surname') }}
+                    {{ $t("pages.base.surname") }}
                   </th>
                   <th class="text-left">
                     Email
                   </th>
                   <th class="text-right">
-                    {{ $t('pages.base.options') }}
+                    {{ $t("pages.base.options") }}
                   </th>
                 </tr>
               </thead>
@@ -53,15 +53,16 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-alert
-      type="success"
-      class="alert"
-      transition="scale-transition"
-      v-model="alert"
-      dismissible
-    >
-      Kullanıcı silme işlemi başarılı.
-    </v-alert>
+
+    <v-snackbar v-model="snackbar" :multi-line="multiLine">
+      {{ text }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn color="red" text v-bind="attrs" @click="snackbar = false">
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
@@ -72,14 +73,18 @@ export default {
   data() {
     return {
       data: [],
-      alert: false,
+
+      multiLine: true,
+      snackbar: false,
+      text: `I'm a multi-line snackbar.`,
     };
   },
   methods: {
     deleteData(index, id) {
       this.$store.dispatch(BASE_DELETE_METHOD, id).then(() => {
         this.data.splice(index, 1);
-        this.alert = true;
+
+        this.snackbar = true;
       });
     },
     getData() {
@@ -103,10 +108,5 @@ export default {
 th:last-child,
 td:last-child {
   text-align: right;
-}
-.alert {
-  position: fixed;
-  right: 40px;
-  top: 100px;
 }
 </style>

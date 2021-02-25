@@ -3,7 +3,11 @@
     <v-container>
       <v-row>
         <v-col>
-          DASHBOARD
+          <div class="text-center">
+            
+
+           
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -11,7 +15,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+     
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

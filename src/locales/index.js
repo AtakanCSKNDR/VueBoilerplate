@@ -11,6 +11,6 @@ const messages = {
 };
 
 export default new VueI18n({
-  locale: "tr", // set locale
+  locale: localStorage.getItem("locale"), // set locale
   messages, // set locale messages
 });

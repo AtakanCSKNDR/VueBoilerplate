@@ -37,8 +37,23 @@
 
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
       <v-toolbar-title>Application</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-menu transition="slide-x-transition" top>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" v-on="on">
+            <faIcon style="font-size:30px" icon="globe"></faIcon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item v-for="(item, index) in languages" :key="index">
+            <v-list-item-title @click="changeLanguage(item)">{{
+              item.title
+            }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-app-bar>
 
     <v-main>
@@ -47,7 +62,7 @@
           <v-breadcrumbs :items="breadCrumbRoute">
             <template v-slot:item="{ item }">
               <v-breadcrumbs-item @click="$router.push(item.path)">
-                {{ item.name.toUpperCase()}}
+                {{ item.name.toUpperCase() }}
               </v-breadcrumbs-item>
             </template>
           </v-breadcrumbs>
@@ -67,9 +82,18 @@ export default {
       breadCrumbRoute: [],
       drawer: null,
       items: [
-        { title: this.$tc('pages.menus.dashboard'), icon: "mdi-view-dashboard", route: "/Dashboard" },
-        { title: this.$tc('pages.menus.users'), icon: "mdi-image", route: "/Users" },
+        {
+          title: this.$tc("pages.menus.dashboard"),
+          icon: "mdi-view-dashboard",
+          route: "/Dashboard",
+        },
+        {
+          title: this.$tc("pages.menus.users"),
+          icon: "mdi-image",
+          route: "/Users",
+        },
       ],
+      languages: [{ title: "TR" }, { title: "EN" }],
       right: null,
     };
   },
@@ -80,6 +104,10 @@ export default {
     },
   },
   methods: {
+    changeLanguage(item) {
+      localStorage.setItem("locale", item.title.toLowerCase());
+      location.reload();
+    },
     changeRoute(route) {
       this.$router.push(route);
     },

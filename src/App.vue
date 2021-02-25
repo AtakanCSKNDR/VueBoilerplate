@@ -1,5 +1,8 @@
 <template>
-  <router-view></router-view>
+  <div id="app">
+    <router-view></router-view>
+    <notifications position="top right"  classes="vue-notification"/>
+  </div>
 </template>
 
 <script>
@@ -11,3 +14,7 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+
+</style>

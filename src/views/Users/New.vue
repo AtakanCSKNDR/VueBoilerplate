@@ -4,8 +4,7 @@
       <v-row>
         <v-col :cols="12">
           <v-card-title style="padding:0;" class="mb-6 justify-space-between">
-            {{$t('pages.base.addnew')}}
-         
+            {{ $t("pages.base.addnew") }}
           </v-card-title>
 
           <v-form ref="form" v-model="valid" lazy-validation>
@@ -57,21 +56,12 @@
             </v-row>
 
             <v-btn color="success" class="mr-4" small @click="createUser">
-              {{$t('pages.base.adduser')}}
+              {{ $t("pages.base.adduser") }}
             </v-btn>
           </v-form>
         </v-col>
       </v-row>
     </v-container>
-    <v-alert
-      type="success"
-      class="alert"
-      transition="scale-transition"
-      v-model="alert"
-      dismissible
-    >
-      {{$t('pages.base.notify.addsuccess')}}
-    </v-alert>
   </div>
 </template>
 
@@ -80,7 +70,6 @@ import { BASE_POST_METHOD } from "@/store/actions.type";
 export default {
   data() {
     return {
-      alert: false,
       form: {
         name: null,
         email: null,
@@ -101,7 +90,11 @@ export default {
       };
 
       this.$store.dispatch(BASE_POST_METHOD, request).then(() => {
-        this.alert = true;
+        this.$notify({
+          title: "Added",
+          text: "User has been added successfully",
+          type: "success",
+        });
       });
     },
   },

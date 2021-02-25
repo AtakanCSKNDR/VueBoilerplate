@@ -12,6 +12,7 @@ export default {
     website: "Web Sayfası",
     phone: "Telefon",
     username: "Kullanıcı Adı",
+    userlist:"Kullanıcı Listesi",
     notify: {
       addsuccess: "Kullanıcı ekleme işlemi başarılı",
     },

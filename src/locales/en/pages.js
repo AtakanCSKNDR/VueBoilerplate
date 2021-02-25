@@ -1,15 +1,20 @@
 export default {
+  menus: {
+    dashboard: "Dashboard",
+    users: "Users",
+  },
   base: {
     name: "Name",
     surname: "Surname",
     options: "Options",
     addnew: "Add New",
-    adduser:"Add User",
+    adduser: "Add User",
     website: "Website",
     phone: "Phone",
     username: "Username",
-    notify:{
-        addsuccess:"User has been added successfully",
-    }
+    userlist: "User List",
+    notify: {
+      addsuccess: "User has been added successfully",
+    },
   },
 };
